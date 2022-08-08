@@ -1,3 +1,6 @@
+
+
+
 let myLibrary = [];
 
 
@@ -25,7 +28,8 @@ const theHobbits = new Book('The Hobbitss','Tolkiensss','295' ,'not read yet');
 addBookToLibrary(theHobbit);
 addBookToLibrary(theHobbits);
 
-console.log(myLibrary);
+
+
 
 
 
@@ -50,8 +54,8 @@ overlay.addEventListener('click', () => {
 
 closeModalButtons.forEach(button => {
   button.addEventListener('click', () => {
-    const modal = button.closest('.modal')
-    closeModal(modal)
+    const modal = button.closest('.modal');
+    closeModal(modal);
   })
 })
 
@@ -66,3 +70,53 @@ function closeModal(modal) {
   modal.classList.remove('active')
   overlay.classList.remove('active')
 }
+
+/* DOm elements */
+const content = document.querySelector('.content')
+
+
+/*Add book to array*/
+const addBook = document.getElementById('add');
+
+
+
+/*Gets all the info of input box*/
+let checkValues = () =>{
+  let  bookInfo = Array.from(document.getElementsByClassName('inputs'));
+  let infoArray = [];
+  bookInfo.forEach(info => {
+    infoArray.push(info.value)
+  });
+  return infoArray
+}
+
+/* Makes the book object and adds it to the library */
+let makeBook = (info) =>{
+  const book = new Book(info[0],info[1],info[2],info[3]);
+  addBookToLibrary(book)
+}
+
+
+/* Book */
+addBook.addEventListener('click',()=>{
+    let info = checkValues();
+    makeBook(info)
+    createBookCards(myLibrary)
+})
+
+/* Creates the book cards */
+let createBookCards = (myLibrary) =>{
+  document.querySelectorAll('.bookCard').forEach(e => e.remove());
+  myLibrary.forEach(book => {
+      let bookCard = document.createElement('div');
+      bookCard.classList.add("bookCard");
+      bookCard.setAttribute('id',`${book.title}`)
+      content.appendChild(bookCard);
+  });
+}
+
+
+
+
+/* Intializes app */
+createBookCards(myLibrary)
