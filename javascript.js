@@ -160,12 +160,12 @@ let createCard = (book) => {
 
 let removeBook = (book) =>{
   let index = myLibrary.indexOf(book);
-  console.log(index)
-  console.log(myLibrary)
-  myLibrary.slice(index,1) 
-  console.log(myLibrary)
-  createBookCards(myLibrary)
+  console.log(index);
+  console.log(myLibrary);
+  myLibrary.splice(index,1)
+  console.log(myLibrary);
+  createBookCards(myLibrary);
 }
 
 /* Intializes app */
-createBookCards(myLibrary)
+createBookCards(myLibrary);
