@@ -30,9 +30,6 @@ addBookToLibrary(theHobbits);
 
 
 
-
-
-
 /* Modal and popup windows */
 const openModalButtons = document.querySelectorAll('[data-modal-target]')
 const closeModalButtons = document.querySelectorAll('[data-close-button]')
@@ -100,8 +97,12 @@ let makeBook = (info) =>{
 /* Book */
 addBook.addEventListener('click',()=>{
     let info = checkValues();
-    makeBook(info)
-    createBookCards(myLibrary)
+    makeBook(info);
+    createBookCards(myLibrary);
+    
+    /* closes the overlay */
+    const modal = document.querySelector('.modal.active')
+    closeModal(modal)
 })
 
 /* Creates the book cards */
@@ -117,7 +118,6 @@ let createBookCards = (myLibrary) =>{
 }
 
 /* creates card */
-
 let createCard = (book) => {
   
   let bookCard = document.createElement('div');
@@ -148,10 +148,6 @@ let createCard = (book) => {
 
   return bookCard
 } 
-
-
-
-
 
 
 /* Intializes app */
