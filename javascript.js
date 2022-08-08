@@ -92,8 +92,6 @@ let makeBook = (info) =>{
   const book = new Book(info[0],info[1],info[2],info[3]);
   addBookToLibrary(book)
 }
-
-
 /* Book */
 addBook.addEventListener('click',()=>{
     let info = checkValues();
@@ -107,7 +105,9 @@ addBook.addEventListener('click',()=>{
 
 /* Creates the book cards */
 let createBookCards = (myLibrary) =>{
+
   document.querySelectorAll('.bookCard').forEach(e => e.remove());
+
   myLibrary.forEach(book => {
       /* Creates grid element with id */
       let bookCard = createCard(book)
@@ -129,13 +129,13 @@ let createCard = (book) => {
   bookCard.appendChild(title);
 
   /* Adds the remove feauture of the list */
-  let removeBook = document.createElement('button')
-  removeBook.classList.add('removeButton');
-  removeBook.textContent='h'
-  removeBook.addEventListener('click',() => {
-    console.log(book.title)
+  let delBook = document.createElement('button')
+  delBook.classList.add('removeButton');
+  delBook.textContent='h'
+  delBook.addEventListener('click',()=>{
+    removeBook(book);
   })
-  bookCard.appendChild(removeBook);
+  bookCard.appendChild(delBook);
 
   /*Author*/
   let author = document.createElement('div');
@@ -158,6 +158,14 @@ let createCard = (book) => {
   return bookCard
 } 
 
+let removeBook = (book) =>{
+  let index = myLibrary.indexOf(book);
+  console.log(index)
+  console.log(myLibrary)
+  myLibrary.slice(index,1) 
+  console.log(myLibrary)
+  createBookCards(myLibrary)
+}
 
 /* Intializes app */
 createBookCards(myLibrary)
