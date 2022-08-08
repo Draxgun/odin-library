@@ -18,9 +18,15 @@
 
     <div class="content"> 
         <button data-modal-target="#bookForm" class="addForm">+</button>
+        
+        <div class="cardContainer">
 
-        <!--modal Window -->
-        <div class="modal" id="bookForm">
+        </div>
+    </div>
+    
+    <div class="footer"></div>
+    <!--modal Window -->
+    <div class="modal" id="bookForm">
             <div class="modalHeader">
                 <div class="modalTitle">Add your book!</div>
                 <button data-close-button class="close">&times;</button>
@@ -29,33 +35,31 @@
                 
                 <div class="form">
                     <div class="titleForm" id="title">Title</div>
-                    <input type="text">
+                    <input class="inputs" type="text">
                 </div>
 
                 <div class="form">
                     <div class="titleForm" id="author">Author</div>
-                    <input type="text">
+                    <input class="inputs" type="text">
                 </div>
 
                 <div class="form">
                     <div class="titleForm" id="pages">Pages</div>
-                    <input type="text">
+                    <input class="inputs" type="text">
                 </div>
 
 
                 <div class="form">
                     <div class="titleForm" id="stauts">Have you read it?</div>
-                    <input type='checkbox'>
+                    <input class="inputs" type='checkbox'>
                 </div>
 
                 <button id="add">AddBook</button>
             </div>
             
-        </div>
-        
-    </div>
+    </div>    
     <div id="overlay"></div>
-    <div class="footer">
+    
         
     </div>
    
