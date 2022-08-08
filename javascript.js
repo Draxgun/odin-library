@@ -108,12 +108,48 @@ addBook.addEventListener('click',()=>{
 let createBookCards = (myLibrary) =>{
   document.querySelectorAll('.bookCard').forEach(e => e.remove());
   myLibrary.forEach(book => {
-      let bookCard = document.createElement('div');
+      /* Creates grid element with id */
+      let bookCard = createCard(book)
       bookCard.classList.add("bookCard");
       bookCard.setAttribute('id',`${book.title}`)
       content.appendChild(bookCard);
   });
 }
+
+/* creates card */
+
+let createCard = (book) => {
+  
+  let bookCard = document.createElement('div');
+
+  /* Title of the book */
+  let title = document.createElement('div');
+  title.classList.add('cardText');
+  title.textContent = book.title;
+  bookCard.appendChild(title);
+
+  /*Author*/
+  let author = document.createElement('div');
+  author.classList.add('cardText');
+  author.textContent = book.author;
+  bookCard.appendChild(author);
+
+  /*pages*/
+  let pages = document.createElement('div');
+  pages.classList.add('cardText');
+  pages.textContent = book.pages;
+  bookCard.appendChild(pages);
+
+  /* read */
+  let read = document.createElement('div')
+  read.classList.add('cardText');
+  read.textContent = book.read;
+  bookCard.appendChild(read);
+
+  return bookCard
+} 
+
+
 
 
 
