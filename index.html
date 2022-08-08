@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="javascript.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <title>My Library</title>
+</head>
+<body>
+    <div class="header">
+        <div class="title">Digital Library</div>
+    </div>
+
+    <div class="content"> 
+        <button data-modal-target="#bookForm" class="addForm">+</button>
+
+        <!--modal Window -->
+        <div class="modal" id="bookForm">
+            <div class="modalHeader">
+                <div class="modalTitle">Add your book!</div>
+                <button data-close-button class="close">&times;</button>
+            </div>
+            <div class="bookInfo">
+                
+                <div class="form">
+                    <div class="titleForm" id="title">Title</div>
+                    <input type="text">
+                </div>
+
+                <div class="form">
+                    <div class="titleForm" id="author">Author</div>
+                    <input type="text">
+                </div>
+
+                <div class="form">
+                    <div class="titleForm" id="pages">Pages</div>
+                    <input type="text">
+                </div>
+
+
+                <div class="form">
+                    <div class="titleForm" id="stauts">Have you read it?</div>
+                    <input type='checkbox'>
+                </div>
+
+                <button id="add">AddBook</button>
+            </div>
+            
+        </div>
+        
+    </div>
+    <div id="overlay"></div>
+    <div class="footer">
+        
+    </div>
+   
+</body>
+</html>
