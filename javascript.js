@@ -128,6 +128,15 @@ let createCard = (book) => {
   title.textContent = book.title;
   bookCard.appendChild(title);
 
+  /* Adds the remove feauture of the list */
+  let removeBook = document.createElement('button')
+  removeBook.classList.add('removeButton');
+  removeBook.textContent='h'
+  removeBook.addEventListener('click',() => {
+    console.log(book.title)
+  })
+  bookCard.appendChild(removeBook);
+
   /*Author*/
   let author = document.createElement('div');
   author.classList.add('cardText');
