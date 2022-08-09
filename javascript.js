@@ -82,18 +82,32 @@ let checkValues = () =>{
   let  bookInfo = Array.from(document.getElementsByClassName('inputs'));
   let infoArray = [];
   bookInfo.forEach(info => {
-    if (info.type === 'text'){
-      infoArray.push(info.value)
-    }else{
-      if(info.checked === false){
-        infoArray.push('not read')
-      }else{
-        infoArray.push('read')
-      }
-    }
     
-  });
-  return infoArray
+  if (info.type === 'text' ||info.type === 'number'){
+      infoArray.push(info.value)
+  }else{
+      if(info.checked === false){
+        infoArray.push(false)
+      }else{
+        infoArray.push(true)
+      }
+  }});
+
+  if(infoArray.includes('')){
+    let index = infoArray.indexOf('');
+    let missingField = ''
+    if(index === 0){
+      missingField = 'title'
+    } else if(index === 1){
+      missingField = 'author'
+    }else if(index === 2){
+      missingField = 'number of pages'
+    }
+    alert(`The ${missingField} is missing`)
+  }else{
+    return infoArray
+  }
+ 
 }
 
 /* Makes the book object and adds it to the library */
@@ -103,6 +117,7 @@ let makeBook = (info) =>{
 }
 /* Book */
 addBook.addEventListener('click',()=>{
+  try {
     let info = checkValues();
     makeBook(info);
     createBookCards(myLibrary);
@@ -111,7 +126,10 @@ addBook.addEventListener('click',()=>{
     const modal = document.querySelector('.modal.active')
     clearContent()
     closeModal(modal)
-})
+  } catch (error) {
+    console.log(error)
+  }}
+)
 
 /* Creates the book cards */
 let createBookCards = (myLibrary) =>{
@@ -141,7 +159,7 @@ let createCard = (book) => {
   /* Adds the remove feauture of the list */
   let delBook = document.createElement('button')
   delBook.classList.add('removeButton');
-  delBook.textContent='h'
+  delBook.textContent='x'
   delBook.addEventListener('click',()=>{
     removeBook(book);
   })
