@@ -20,8 +20,8 @@ let addBookToLibrary = (book) =>{
     myLibrary.push(book)
 }
 
-const theHobbit = new Book('The Hobbit','Tolkien','295' ,'not read yet');
-const theHobbits = new Book('The Hobbitss','Tolkiensss','295' ,'not read yet');
+const theHobbit = new Book('The Hobbit','Tolkien','295' ,false);
+const theHobbits = new Book('The Hobbitss','Tolkiensss','295' ,false);
 
 
 
@@ -183,6 +183,17 @@ let createCard = (book) => {
   read.textContent = book.read;
   bookCard.appendChild(read);
 
+  /* Test button for read status */
+    /* read */
+    let readStatus = document.createElement('button')
+    readStatus.classList.add('cardText');
+    readStatus.textContent = 'hola';
+    readStatus.addEventListener('click',() => {
+      changeStatus(book)
+      console.log(book.read)
+    })
+    bookCard.appendChild(readStatus);
+
   return bookCard
 } 
 
@@ -205,6 +216,18 @@ let clearContent = () => {
     }
   }
 )};
+
+let changeStatus = (book) =>{
+  if(book.read === false){
+    book.read = true
+  }else{
+    book.read= false
+  }
+  createBookCards(myLibrary)
+}
+
+
+
 
 /* Intializes app */
 createBookCards(myLibrary);
