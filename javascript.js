@@ -82,7 +82,16 @@ let checkValues = () =>{
   let  bookInfo = Array.from(document.getElementsByClassName('inputs'));
   let infoArray = [];
   bookInfo.forEach(info => {
-    infoArray.push(info.value)
+    if (info.type === 'text'){
+      infoArray.push(info.value)
+    }else{
+      if(info.checked === false){
+        infoArray.push('not read')
+      }else{
+        infoArray.push('read')
+      }
+    }
+    
   });
   return infoArray
 }
@@ -100,6 +109,7 @@ addBook.addEventListener('click',()=>{
     
     /* closes the overlay */
     const modal = document.querySelector('.modal.active')
+    clearContent()
     closeModal(modal)
 })
 
@@ -166,6 +176,17 @@ let removeBook = (book) =>{
   console.log(myLibrary);
   createBookCards(myLibrary);
 }
+
+let clearContent = () => {
+  let  bookInfo = document.getElementsByClassName('inputs')
+  Array.from(bookInfo).forEach(book => {
+    if (book.type === 'text'){
+      book.value = ''
+    }else{
+      book.checked = false
+    }
+  }
+)};
 
 /* Intializes app */
 createBookCards(myLibrary);
