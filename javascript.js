@@ -22,34 +22,7 @@ const theHobbits = new Book('The Hobbitss','Tolkiensss','295' ,false);
 
 addBookToLibrary(theHobbit);
 addBookToLibrary(theHobbits);
-addBookToLibrary(theHobbit);
-addBookToLibrary(theHobbit);
-addBookToLibrary(theHobbit);
-addBookToLibrary(theHobbit);
-addBookToLibrary(theHobbit);
-addBookToLibrary(theHobbit);
-addBookToLibrary(theHobbit);
-addBookToLibrary(theHobbit);
-addBookToLibrary(theHobbit);
-addBookToLibrary(theHobbit);
-addBookToLibrary(theHobbit);
-addBookToLibrary(theHobbit);
-addBookToLibrary(theHobbit);
-addBookToLibrary(theHobbit);
-addBookToLibrary(theHobbit);
-addBookToLibrary(theHobbit);
-addBookToLibrary(theHobbit);
-addBookToLibrary(theHobbit);
-addBookToLibrary(theHobbit);
-addBookToLibrary(theHobbit);
-addBookToLibrary(theHobbit);
-addBookToLibrary(theHobbit);
-addBookToLibrary(theHobbit);
-addBookToLibrary(theHobbit);
-addBookToLibrary(theHobbit);
-addBookToLibrary(theHobbit);
-addBookToLibrary(theHobbit);
-addBookToLibrary(theHobbit);
+
 
 
 
