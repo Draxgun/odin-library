@@ -209,7 +209,7 @@ let removeBook = (book) =>{
 let clearContent = () => {
   let  bookInfo = document.getElementsByClassName('inputs')
   Array.from(bookInfo).forEach(book => {
-    if (book.type === 'text'){
+    if (book.type === 'text' || book.type === 'number'){
       book.value = ''
     }else{
       book.checked = false
