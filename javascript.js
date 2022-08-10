@@ -174,51 +174,61 @@ let createBookCards = (myLibrary) =>{
 let createCard = (book) => {
   
   let bookCard = document.createElement('div');
+  let bookCardHeader = document.createElement('div');
+  bookCardHeader.classList.add('bookCardHeader');
+  let bookCardContents = document.createElement('div');
+  bookCardContents.classList.add('bookCardContents')
 
   /* Title of the book */
   let title = document.createElement('div');
   title.classList.add('cardText');
   title.textContent = book.title;
-  bookCard.appendChild(title);
+  bookCardHeader.appendChild(title);
 
   /* Adds the remove feauture of the list */
-  let delBook = document.createElement('button')
-  delBook.classList.add('removeButton');
-  delBook.textContent='x'
+  let delBook = document.createElement('i')
+  delBook.setAttribute('class',"material-icons custom")
+  delBook.textContent='delete'
   delBook.addEventListener('click',()=>{
     removeBook(book);
   })
-  bookCard.appendChild(delBook);
+
+
+  bookCardHeader.appendChild(delBook);
+  bookCard.appendChild(bookCardHeader);
 
   /*Author*/
   let author = document.createElement('div');
   author.classList.add('cardText');
-  author.textContent = book.author;
-  bookCard.appendChild(author);
+  author.textContent = `Author: ${book.author}`;
+  bookCardContents.appendChild(author);
 
   /*pages*/
   let pages = document.createElement('div');
   pages.classList.add('cardText');
-  pages.textContent = book.pages;
-  bookCard.appendChild(pages);
+  pages.textContent = `Pages: ${book.pages}`;
+  bookCardContents.appendChild(pages);
 
   /* read */
-  let read = document.createElement('div')
-  read.classList.add('cardText');
-  read.textContent = book.read;
-  bookCard.appendChild(read);
+  let read = document.createElement('i')
+  read.setAttribute('class',"material-icons custom")
+  read.textContent = 'book';
+  if (book.read=== true){
+    read.style.color = 'green'
+  }else{
+    read.style.color = 'white'
+  }
+  bookCardContents.appendChild(read);
 
   /* Test button for read status */
     /* read */
-    let readStatus = document.createElement('button')
-    readStatus.classList.add('cardText');
-    readStatus.textContent = 'hola';
-    readStatus.addEventListener('click',() => {
+
+    read.addEventListener('click',() => {
       changeStatus(book)
       console.log(book.read)
     })
-    bookCard.appendChild(readStatus);
 
+    bookCard.appendChild(bookCardContents);
   return bookCard
 } 
 
