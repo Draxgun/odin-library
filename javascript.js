@@ -1,6 +1,3 @@
-
-
-
 let myLibrary = [];
 
 
@@ -23,10 +20,37 @@ let addBookToLibrary = (book) =>{
 const theHobbit = new Book('The Hobbit','Tolkien','295' ,false);
 const theHobbits = new Book('The Hobbitss','Tolkiensss','295' ,false);
 
-
-
 addBookToLibrary(theHobbit);
 addBookToLibrary(theHobbits);
+addBookToLibrary(theHobbit);
+addBookToLibrary(theHobbit);
+addBookToLibrary(theHobbit);
+addBookToLibrary(theHobbit);
+addBookToLibrary(theHobbit);
+addBookToLibrary(theHobbit);
+addBookToLibrary(theHobbit);
+addBookToLibrary(theHobbit);
+addBookToLibrary(theHobbit);
+addBookToLibrary(theHobbit);
+addBookToLibrary(theHobbit);
+addBookToLibrary(theHobbit);
+addBookToLibrary(theHobbit);
+addBookToLibrary(theHobbit);
+addBookToLibrary(theHobbit);
+addBookToLibrary(theHobbit);
+addBookToLibrary(theHobbit);
+addBookToLibrary(theHobbit);
+addBookToLibrary(theHobbit);
+addBookToLibrary(theHobbit);
+addBookToLibrary(theHobbit);
+addBookToLibrary(theHobbit);
+addBookToLibrary(theHobbit);
+addBookToLibrary(theHobbit);
+addBookToLibrary(theHobbit);
+addBookToLibrary(theHobbit);
+addBookToLibrary(theHobbit);
+addBookToLibrary(theHobbit);
+
 
 
 
@@ -197,6 +221,7 @@ let createCard = (book) => {
   return bookCard
 } 
 
+/* Removes Book from screen */
 let removeBook = (book) =>{
   let index = myLibrary.indexOf(book);
   console.log(index);
@@ -205,7 +230,7 @@ let removeBook = (book) =>{
   console.log(myLibrary);
   createBookCards(myLibrary);
 }
-
+/*Clears content of the form */
 let clearContent = () => {
   let  bookInfo = document.getElementsByClassName('inputs')
   Array.from(bookInfo).forEach(book => {
@@ -216,7 +241,7 @@ let clearContent = () => {
     }
   }
 )};
-
+/* Changes the status from read to not read */
 let changeStatus = (book) =>{
   if(book.read === false){
     book.read = true
