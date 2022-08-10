@@ -43,6 +43,19 @@ body{
     text-shadow: 2px 2px rgb(28, 56, 121);
 }
 
+#add{
+    font-size: 1.5rem;
+    border-radius: 10px;
+    background-color:rgb(249, 245, 235);
+    padding: 10px;
+    width:180px
+}
+
+#add:hover{
+    background-color: rgb(28, 56, 121);
+
+}
+
 .modal.active{
     transform: translate(-50%,-50%) scale(1);
 }
